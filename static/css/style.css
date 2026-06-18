@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f6f7fb;
+    color: #2c2c2c;
+}
+
+.header {
+    background: linear-gradient(135deg, #2e2b4f, #7a7799);
+    padding: 18px 40px;   /* 🔥 Reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;           /* ✅ Gap between logo and text */
+}
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.btn-back:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+}
+.logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: contain;   
+    background-color: white; 
+    padding: 4px;          
+    border: 2px solid white;
+    cursor: pointer;
+}
+
+
+.title-group h1 {
+    margin: 0;
+    font-size: 30px;     /* Balanced title size */
+    color: white;
+    font-weight: 600;
+}
+
+.subtitle {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #e0e0e0;
+}
+.hero {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 40px;
+    padding: 80px 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+.hero-media {
+    width: 100%;
+    max-width: 600px;
+}
+
+.hero-video,
+.hero-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 24px;
+    object-fit: cover;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+.hero-text h1 {
+    font-size: 36px;
+    line-height: 1.25;
+    color: #2e2b4f;
+    margin-bottom: 18px;
+}
+
+.hero-text p {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #555;
+    max-width: 480px;
+    text-align: justify;
+    text-justify: inter-word;
+    margin-bottom: 30px;
+}
+
+/*.hero-media video,
+.hero-media img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}*/
+
+.hero-btn {
+    padding: 12px 26px;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #2e2b4f, #7a7799);
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+.video-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+    background: rgba(0,0,0,0.6);
+    padding: 8px 12px;
+    border-radius: 6px;
+}
+
+section {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+section > .card:first-child {
+    margin-top: 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+.section-wrapper {
+    max-width: 1200px;      /* 🔥 limits width */
+    margin: 0 auto 60px;    /* 🔥 space from sides */
+    padding: 0 24px;        /* 🔥 mobile friendly */
+}
+
+.insight-flow {
+    padding: 50px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: center;   /* 🔥 vertical alignment fix */
+}
+
+.about-text {
+    max-width: 520px;      /* 🔥 prevents text stretching */
+}
+
+.about-text h2 {
+    margin-top: 0;
+    margin-bottom: 18px;
+    font-size: 28px;
+    color: #2e2b4f;
+}
+
+.about-text p {
+    font-size: 15.5px;
+    line-height: 1.75;      /* 🔥 smooth readable spacing */
+    margin-bottom: 16px;
+    color: #444;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 420px;      /* 🔥 image balance */
+    display: block;
+    margin-left: auto;
+}
+
+
+/* FEATURES */
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    padding: 12px 0;
+    font-size: 16px;
+    color: #444;
+}
+
+.features li::before {
+    content: "✔";
+    color: #7a7799;
+    margin-right: 10px;
+}
+
+/* CHARTS */
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.flow-box {
+    background: #d1d2d4;
+    padding: 22px;
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.flow-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+.flow-box h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #2e2b4f;
+}
+
+.flow-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    text-justify: inter-word;
+}
+.charts {
+    max-width: 1100px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+.chart {
+    background: #fff;
+    border-radius: 14px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.chart h3 {
+    margin-top: 0;
+    color: #2e2b4f;
+}
+
+.chart img {
+    width: 100%;
+    max-width: 700px;   /* 🔥 controls size on big screens */
+    margin: 20px auto 0;
+    display: block;
+    border-radius: 12px;
+}
+.chart-img {
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.chart-img:hover {
+    transform: scale(1.03);
+}
+
+.hint {
+    font-size: 12px;
+    color: #777;
+    text-align: center;
+}
+
+
+.view-insights-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #2e2b4f, #7a7799);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.view-insights-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* FOOTER */
+footer {
+    background: #1f1c2c;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
