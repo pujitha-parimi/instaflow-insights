@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InstaFlow Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-left">
+        <a href="/">
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="InstaFlow Insights Logo"
+                class="logo"
+            />
+        </a>
+
+        <div class="title-group">
+            <h1>InstaFlow Insights</h1>
+            <p class="subtitle">Deep Dive into Instagram Influencer Analytics</p>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Understand Instagram Influence Like Never Before</h1>
+        <p>
+            InstaFlow Insights analyzes influencers, engagement patterns,
+            and regional trends using data analytics and machine learning.
+        </p>
+        <a href="#about" class="hero-btn">Explore Project</a>
+    </div>
+
+    <div class="hero-media">
+        <video autoplay muted loop playsinline preload="auto" disablePictureInPicture controlslist="nodownload nofullscreen" class="hero-video">
+            <source src="{{ url_for('static', filename='videos/analytics1.mp4') }}" type="video/mp4">
+        </video>
+        <!-- OR use image / gif -->
+    </div>
+</section>
+
+<section>
+    <div class="card about-grid" id="about">
+    <div class="about-text">
+        <h2>About the Project</h2>
+        <p>
+            InstaFlow Insights is an intelligent analytics platform designed to
+            study the dynamics of Instagram influencers and their interaction
+            with audiences. The platform focuses on understanding influence,
+            engagement behavior, and content impact across different regions.
+        </p>
+
+        <p>
+            By combining data analysis, visualization techniques, and
+            machine learning, the system provides a structured way to explore
+            how influencer ecosystems operate on modern social media platforms.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="{{ url_for('static', filename='images/analytics_illustration.png') }}"
+             alt="Analytics Illustration">
+    </div>
+</div>
+
+
+    <div class="card features">
+        <h2>Key Features</h2>
+        <ul>
+            <li>Identification of top Instagram influencers</li>
+            <li>Engagement and reach pattern analysis</li>
+            <li>Country-wise influencer distribution</li>
+            <li>Influence score prediction using Machine Learning</li>
+        </ul>
+    </div>
+</section>
+<div class="section-wrapper">
+<div class="card insight-flow">
+    <h2>What Does InstaFlow Insights Analyze?</h2>
+
+    <div class="flow-grid">
+        <div class="flow-box">
+            <h3>Influencer Presence</h3>
+            <p>
+                Examines how influencers establish dominance on Instagram based on
+                followers, posting behavior, and engagement patterns.
+            </p>
+        </div>
+
+        <div class="flow-box">
+            <h3>Audience Interaction</h3>
+            <p>
+                Studies likes, engagement rates, and audience response to understand
+                how content resonates with followers.
+            </p>
+        </div>
+
+        <div class="flow-box">
+            <h3>Regional Influence</h3>
+            <p>
+                Identifies geographical trends by analyzing influencer distribution
+                across different countries and regions.
+            </p>
+        </div>
+
+        <div class="flow-box">
+            <h3>Predictive Intelligence</h3>
+            <p>
+                Uses machine learning models to predict influence strength based on
+                historical engagement and activity metrics.
+            </p>
+        </div>
+    </div>
+</div>
+</div>
+<div style="text-align:center; margin-top:40px;">
+    <a href="/insights" class="view-insights-btn">View Detailed Insights</a>
+</div>
+
+<footer>
+    <p>Major Project | Instagram Analytics</p>
+</footer>
+<script>
+    // Always load page at top (hero section)
+    window.onload = function () {
+        if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname);
+            window.scrollTo(0, 0);
+        }
+    };
+</script>
+<script>
+    const heroVideo = document.querySelector(".hero-video");
+
+    if (heroVideo) {
+        heroVideo.addEventListener("timeupdate", function () {
+            if (this.currentTime >= this.duration - 0.2) {
+                this.currentTime = 0;
+                this.play();
+            }
+        });
+    }
+</script>
+
+
+
+</body>
+</html>

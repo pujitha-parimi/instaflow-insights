@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Insights | InstaFlow Insights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-left">
+        <a href="/">
+            <img
+                src="{{ url_for('static', filename='images/logo.png') }}"
+                alt="InstaFlow Insights Logo"
+                class="logo"
+            />
+        </a>
+
+        <div class="title-group">
+            <h1>Analytics Insights</h1>
+            <p class="subtitle">Visual understanding of influencer performance</p>
+        </div>
+    </div>
+    <div class="header-right">
+        <a href="/" class="btn-back">Back to Home</a>
+    </div>
+</header>
+
+
+<section class="charts">
+
+{% set ordered_images = [
+    'top_influencers_influence.png',
+    'middle_influencers_influence.png',
+    'bottom_influencers_influence.png',
+    'country_distribution_pie.png',
+    'top_countries_avg_influence.png',
+    'engagement_rate_distribution.png',
+    'followers_vs_avg_likes.png',
+    'followers_vs_influence.png',
+    'posts_vs_engagement.png',
+    'correlation_heatmap.png'
+] %}
+    {% for image in ordered_images %}
+    <div class="card chart">
+        <h3>{{ image.replace('_', ' ').replace('.png','').title() }}</h3>
+
+        {% set interactive_map = {
+            'followers_vs_avg_likes.png':
+            'interactive/instagram_influencers/followers_vs_avg_likes_interactive.html',
+            
+            'followers_vs_influence.png':
+            'interactive/instagram_influencers/followers_vs_influence_interactive.html',
+
+            'posts_vs_engagement.png':
+            'interactive/instagram_influencers/posts_vs_engagement_interactive.html'
+        } %}
+
+        {% if image in interactive_map %}
+            <a href="{{ url_for('static', filename=interactive_map[image]) }}"
+                target="_blank">
+                <img
+                    src="{{ url_for('static', filename='images/' + dataset_name + '/' + image) }}"
+                    alt="{{ image }}"
+                    class="chart-img"
+                >
+            </a>
+            <p class="hint">Click image to view interactive chart</p>
+        {% else %}
+            <img
+                src="{{ url_for('static', filename='images/' + dataset_name + '/' + image) }}"
+                alt="{{ image }}"
+            >
+        {% endif %}
+
+    </div>
+{% endfor %}
+
+
+</section>
+
+<footer>
+    <p>InstaFlow Insights © 2025</p>
+</footer>
+
+</body>
+</html>
